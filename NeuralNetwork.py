@@ -21,7 +21,7 @@ class NeuralNetwork:
 
     def predict(self, X, _type = 'regression'):
 
-        if _type == 'regession':
+        if _type == 'regression':
             return self.feed_forward(X)
 
         elif _type == 'classification':
