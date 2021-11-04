@@ -19,13 +19,17 @@ class NeuralNetwork:
 
         return X
 
-    def predict(self, X, _type = 'regression'):
+    def predict(self, X, net_type='regression', n_neurons=3):
+        ff = self.feed_forward(X)
+        if net_type == 'classification':
+            if ff.ndim == 1:
+                pred = np.argmax(ff)
+            else:
+                pred = np.argmax(ff, axis=1)
+        if net_type == 'regression':
+            pred = ff
 
-        if _type == 'regression':
-            return self.feed_forward(X)
-
-        elif _type == 'classification':
-            return np.argmax(self.feed_forward(X), axis = 1)
+        return pred
 
     def backpropagation(self, X, y, learning_rate, lmbd, output):
         for i in reversed(range(len(self._layers))):
@@ -49,7 +53,7 @@ class NeuralNetwork:
             layer.bias = layer.bias + layer.delta * learning_rate
 
 
-    def train(self, X, y, learning_rate, nb_epochs = 100, batch_size = 10, lmbd=0):
+    def train(self, X, y, learning_rate, nb_epochs = 100, batch_size = 10, lmbd=0, _type = 'regression'):
         iterations = X.shape[0] // batch_size
         mses = []
         for i in range(1, nb_epochs+1):
@@ -62,10 +66,10 @@ class NeuralNetwork:
                 for j in range(len(Xi)):
                     output = self.feed_forward(Xi[j])
                     self.backpropagation(Xi[j], Yi[j], learning_rate, lmbd, output)
-
-            mse = np.mean(np.square(y - self.feed_forward(X)))
-            mses.append(mse)
-            print('Epoch: #%s, MSE: %f' % (i, float(mse)))
+            if (type == 'regression'):
+                mse = np.mean(np.square(y - self.predict(X, net_type= _type)))
+                mses.append(mse)
+                print('Epoch: #%s, MSE: %f' % (i, float(mse)))
         return mses
 
     def MSE(self, y_pred, y_true):

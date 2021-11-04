@@ -33,7 +33,7 @@ def solution_nn():
         nn.add_layer(Layer(18, 18, 'sigmoid'))
         nn.add_layer(Layer(18, 18, 'sigmoid'))
         nn.add_layer(Layer(18, 1, None))
-        train = nn.train(X_train, z_train, i, nb_epochs = 100, batch_size = 10,  lmbd=0.01)
+        train = nn.train(X_train, z_train, i, nb_epochs = 100, batch_size = 10,  lmbd=0.01, _type='regression')
         y_pred = nn.predict(X_test, 'regression')
         z_pred = nn.predict(X, 'regression')
         MSE_nn_val.append(nn.MSE((y_pred.flatten()), z_test))
