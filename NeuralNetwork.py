@@ -66,10 +66,13 @@ class NeuralNetwork:
                 for j in range(len(Xi)):
                     output = self.feed_forward(Xi[j])
                     self.backpropagation(Xi[j], Yi[j], learning_rate, lmbd, output)
-            if (type == 'regression'):
+
+
+            if (_type == 'regression'):
                 mse = np.mean(np.square(y - self.predict(X, net_type= _type)))
                 mses.append(mse)
                 print('Epoch: #%s, MSE: %f' % (i, float(mse)))
+
         return mses
 
     def MSE(self, y_pred, y_true):

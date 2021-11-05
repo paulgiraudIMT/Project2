@@ -20,10 +20,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92114dbe-78b1-4169-88d5-ea76524acd6e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/SDG.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SolutionSGD.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SDG_OLS.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/SDG_OLS.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NeuralNetwork.py" beforeDir="false" afterPath="$PROJECT_DIR$/NeuralNetwork.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SDG.py" beforeDir="false" afterPath="$PROJECT_DIR$/SDG.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SolutionNNRegression.py" beforeDir="false" afterPath="$PROJECT_DIR$/SolutionNNRegression.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +50,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
   </component>
-  <component name="RunManager" selected="Python.SDG">
+  <component name="RunManager" selected="Python.SolutionNNRegression">
     <configuration name="DataLogistique" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Project2" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -136,10 +137,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.SolutionNNRegression" />
         <item itemvalue="Python.SDG" />
         <item itemvalue="Python.SolutionNNLogistique" />
         <item itemvalue="Python.DataLogistique" />
-        <item itemvalue="Python.SolutionNNRegression" />
       </list>
     </recent_temporary>
   </component>
@@ -164,23 +165,24 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1419" height="213" key="GridCell.Tab.0.bottom" timestamp="1636061132428">
+    <state width="1419" height="212" key="GridCell.Tab.0.bottom" timestamp="1636108298939">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="213" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1636061132428" />
-    <state width="1419" height="213" key="GridCell.Tab.0.center" timestamp="1636061132396">
+    <state width="1419" height="212" key="GridCell.Tab.0.bottom/0.0.1440.900@0.0.1440.900" timestamp="1636108298939" />
+    <state width="1419" height="212" key="GridCell.Tab.0.center" timestamp="1636108298937">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="213" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1636061132396" />
-    <state width="1419" height="213" key="GridCell.Tab.0.left" timestamp="1636061132376">
+    <state width="1419" height="212" key="GridCell.Tab.0.center/0.0.1440.900@0.0.1440.900" timestamp="1636108298937" />
+    <state width="1419" height="212" key="GridCell.Tab.0.left" timestamp="1636108298936">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="213" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1636061132376" />
-    <state width="1419" height="213" key="GridCell.Tab.0.right" timestamp="1636061132397">
+    <state width="1419" height="212" key="GridCell.Tab.0.left/0.0.1440.900@0.0.1440.900" timestamp="1636108298936" />
+    <state width="1419" height="212" key="GridCell.Tab.0.right" timestamp="1636108298938">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
-    <state width="1419" height="213" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1636061132397" />
+    <state width="1419" height="212" key="GridCell.Tab.0.right/0.0.1440.900@0.0.1440.900" timestamp="1636108298938" />
   </component>
 </project>

@@ -10,7 +10,7 @@ from Layer import Layer
 
 #====================== Data
 
-from DataRegression import X, X_test, X_train, x, x_mesh, y_mesh, z_test, z_train, plotFunction
+from DataRegression import X, X_test, X_train, x, x_mesh, y_mesh, z_test, z_train, plotFunction, x_y_test, x_y_train, x_y
 
 
 
@@ -29,13 +29,13 @@ def solution_nn():
     eta = [eta_max]
     for i in eta:
         nn = NeuralNetwork()
-        nn.add_layer(Layer(X_train.shape[1], 18, 'sigmoid'))
-        nn.add_layer(Layer(18, 18, 'sigmoid'))
-        nn.add_layer(Layer(18, 18, 'sigmoid'))
-        nn.add_layer(Layer(18, 1, None))
-        train = nn.train(X_train, z_train, i, nb_epochs = 100, batch_size = 10,  lmbd=0.01, _type='regression')
-        y_pred = nn.predict(X_test, 'regression')
-        z_pred = nn.predict(X, 'regression')
+        nn.add_layer(Layer(x_y_train.shape[1], 32, 'sigmoid'))
+        nn.add_layer(Layer(32, 32, 'sigmoid'))
+        nn.add_layer(Layer(32, 32, 'sigmoid'))
+        nn.add_layer(Layer(32, 1, None))
+        train = nn.train(x_y_train, z_train, i, nb_epochs = 100, batch_size = 5,  lmbd=0.01, _type='regression')
+        y_pred = nn.predict(x_y_test, 'regression')
+        z_pred = nn.predict(x_y, 'regression')
         MSE_nn_val.append(nn.MSE((y_pred.flatten()), z_test))
         plotFunction(x_mesh, y_mesh, z_pred.reshape(len(x), len(x)), "prediction")
 
