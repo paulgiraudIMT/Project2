@@ -9,7 +9,7 @@ import numpy as np
 
 class SDG:
 
-    def __init__(self, learning_rate,n_epochs,batch_size, method = 'ols', lmbda):
+    def __init__(self, learning_rate,n_epochs,batch_size, method = 'ols', lmbda = 0.01):
         self.n_epochs = n_epochs
         self.batch_size = batch_size
         self.learning_rate = learning_rate
@@ -34,11 +34,6 @@ class SDG:
         return grad
 
 
-    def learning_schedule(self, t):
-        t0, t1 = 5, 50
-        return t0 / (t + t1)
-
-
     def iterate_minibatches(self, inputs, targets, batchsize):
         assert inputs.shape[0] == targets.shape[0]
         indices = np.random.permutation(inputs.shape[0])
@@ -52,6 +47,7 @@ class SDG:
         mse_ridge_test = self.compute_square_loss(X_test, y_test, beta) + lambda_ * np.dot(beta.T, beta)
         return mse_ols_test, mse_ridge_test
 
+
     def train(self, X, y):
         num_instances, num_features = X.shape[0], X.shape[1]
         beta = np.random.randn(num_features)
@@ -62,17 +58,14 @@ class SDG:
 
                 X_batch, y_batch = batch
 
-                # for i in range(batch_size):
-                #     learning_rate = learning_schedule(n_epochs*epoch + i)
-
                 if self.method == 'ols':
                     gradient = self.gradient_ols(X_batch, y_batch, beta)
                     beta = beta - self.learning_rate * gradient
                 if self.method == 'ridge':
-                    gradient = self.gradient_ridge(X_batch, y_batch, beta, lambda_= self.lambda_)
+                    gradient = self.gradient_ridge(X_batch, y_batch, beta, lambda_= self.lmbda)
                     beta = beta - self.learning_rate * gradient
 
         mse_ols_train = self.compute_square_loss(X, y, beta)
-        mse_ridge_train = self.compute_square_loss(X, y, beta) + self.lambda_ * np.dot(beta.T, beta)
+        mse_ridge_train = self.compute_square_loss(X, y, beta) + self.lmbda * np.dot(beta.T, beta)
 
         return beta
